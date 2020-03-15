@@ -4,7 +4,8 @@ const HtmlWebpackPlugin =  require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: ['./src/index.js'],
+    mode: "development",
+    entry: [ 'webpack-hot-middleware/client?reload=true', './src/index.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
@@ -19,6 +20,8 @@ module.exports = {
         contentBase: 'dist',
         open: 'Google Chrome',
         port: '8000',
+        inline: true,
+        hot: true
     },
     module: {
         rules: [
