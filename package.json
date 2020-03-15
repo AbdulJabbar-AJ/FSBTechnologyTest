@@ -13,9 +13,9 @@
   },
   "proxy": "http://localhost:3000",
   "scripts": {
-    "start": "webpack-dev-server --mode development",
+    "start": "webpack-dev-server --mode development --env.NODE.ENV=development",
     "build": "webpack --mode production",
-    "server": "nodemon --watch server --watch webpack.config.js server/server.js",
+    "server": "nodemon --watch server --watch webpack.config.js server/server.js --env.NODE.ENV=development",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

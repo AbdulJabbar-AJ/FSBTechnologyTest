@@ -3,8 +3,11 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin =  require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
+console.log('env', process.env.NODE_ENV)
+
+module.exports =  {
     mode: "development",
+    watch: true,
     entry: [ 'webpack-hot-middleware/client?reload=true', './src/index.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -34,8 +37,13 @@ module.exports = {
             {
                 test: /\.s?css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        query: {
+                            modules: true,
+                        }
+                    },
                     'sass-loader'
                 ]
             },
