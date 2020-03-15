@@ -20,6 +20,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 
 app
     .use((req, res, next) => {
+        // console.log('DDDDDD', req.get(() => 'host');
         res.header('Access-Control-Allow-Origin', '*');
         res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS,PUT");
         res.header("Access-Control-Allow-Credentials", "true");

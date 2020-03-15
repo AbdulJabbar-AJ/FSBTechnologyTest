@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
+import fetchSelections from '../actions/getSelections'
 
+function App({fetchSelections, selections}) {
+  useEffect(() =>{
+    fetchSelections()
+  }, [])
 
-function App() {
+  useEffect(() =>{
+    console.log(selections)
+  }, [selections])
+
   return (
-    <div>dgfdgfgdfsggfdssdfsdf</div>
+    <div>React App</div>
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  selections: state.selections
+})
+
+const mapDispatchToProps = dispatch => ({
+  fetchSelections: () => dispatch(fetchSelections())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
