@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
-import fetchSelections from '../actions/getSelections'
+import { fetchCategories } from '../redux/actions'
 
-function App({fetchSelections, selections}) {
+function App({fetchCategories, categories}) {
   useEffect(() =>{
-    fetchSelections()
+    fetchCategories()
   }, [])
 
-  useEffect(() =>{
-    console.log(selections)
-  }, [selections])
+
 
   return (
     <div>React App</div>
@@ -17,11 +15,11 @@ function App({fetchSelections, selections}) {
 }
 
 const mapStateToProps = state => ({
-  selections: state.selections
+  categories: state.categories
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchSelections: () => dispatch(fetchSelections())
+  fetchCategories: () => dispatch(fetchCategories())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

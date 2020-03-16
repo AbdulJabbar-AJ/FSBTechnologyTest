@@ -5,9 +5,10 @@ module.exports = (data, socket) => {
     data.category.forEach(category => {
         category.subcat.forEach(subcat => {
             subcat.event.forEach(event => {
+                const { id, active } = event;
                 events.push({
-                    active: Math.random() >= 0.5,
-                    id: event.id
+                    active: !active,
+                    id
                 });
             });
         });
