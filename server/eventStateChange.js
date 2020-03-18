@@ -7,7 +7,7 @@ module.exports = (data, socket) => {
             subcat.event.forEach(event => {
                 const { id, active } = event;
                 events.push({
-                    active: !active,
+                    active: Math.random() >= 0.5,
                     id
                 });
             });

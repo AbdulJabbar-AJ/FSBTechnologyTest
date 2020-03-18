@@ -12,6 +12,10 @@ function getCategories(categories) {
     return { type: 'GET_CATEGORIES', categories }
 }
 
+export function trackSelection({id, active, price}) {
+    return { type: 'TRACK_SELECTION', id, active, price }
+}
+
 export function selectionPriceUpdate({newPrice, id}) {
     return { type: 'SELECTION_PRICE_UPDATE', newPrice, id }
 }

@@ -1,6 +1,25 @@
+@import "fonts";
 @import "variables";
 @import "mixins";
+@import "counter";
+@import "gameList";
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
 body {
-  color: lightblue;
+  background-color: black;
+}
+
+.gamesList {
+  font-family: 'Baloo 2', 'Arial', 'sans-serif';
+  max-width: 768px;
+  background-color: #a7a999;
+  margin: 0 auto;
+  padding: 20px 100px;
 }

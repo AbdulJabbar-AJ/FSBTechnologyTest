@@ -6,13 +6,9 @@ module.exports = (data, socket) => {
         category.subcat.forEach(subcat => {
             subcat.event.forEach(event => {
                 event.selection.forEach(selection => {
-                    const { id, active } = selection;
                     selections.push({
-                        // Irrelevant math.random here, just invert boolean, otherwise loads of useless calls, not always changing
-                        active: !active,
-                        // Don't need price here
-                        // price,
-                        id
+                        active: Math.random() >= 0.5,
+                        id: selection.id
                     });
                 });
             });
@@ -24,9 +20,3 @@ module.exports = (data, socket) => {
     );
 
 };
-
-
-
-
-// Do need price in this object
-// Irrelevant math.random here, just invert boolean, otherwise loads of useless calls, not always changing

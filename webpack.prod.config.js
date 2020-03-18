@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports =  {
     mode: 'production',
-    entry: [ 'webpack-hot-middleware/client?reload=true', './src/index.js'],
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
@@ -15,14 +15,6 @@ module.exports =  {
         new HtmlWebpackPlugin({ filename: 'index.html', template: './src/index.html'}),
         new webpack.HotModuleReplacementPlugin()
     ],
-    devtool: 'inline-source-maps',
-    devServer: {
-        contentBase: 'dist',
-        open: 'Google Chrome',
-        port: '8000',
-        inline: true,
-        hot: true
-    },
     module: {
         rules: [
             {
@@ -35,12 +27,7 @@ module.exports =  {
                 test: /\.s?css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        query: {
-                            modules: true,
-                        }
-                    },
+                    'css-loader',
                     'sass-loader'
                 ]
             },

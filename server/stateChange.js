@@ -1,14 +1,6 @@
-const ramdonBoolean = () => Math.random() >= 0.5;
+module.exports = (data, socket) => console.log(data);
 
 module.exports = (data, socket) => {
-
-    console.log(data)
-
-};
-
-
-module.exports = (data, socket) => {
-
     const selections = [];
 
     data.category.forEach(category => {

@@ -5,13 +5,14 @@ import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from './js/redux/reducer';
-import App from './js/components/App';
+import GamesList from './js/components/games-list/container/GamesList';
 import './styles/index.scss';
 import './js/api/websockets'
 
-
+// For debugging redux state updates
 const logger = createLogger({ collapsed: true })
-export const store = createStore(rootReducer, applyMiddleware(thunk, logger))
+
+export const store = createStore(rootReducer, applyMiddleware(thunk/*, logger*/))
 const root =  document.getElementById('root')
 
-ReactDOM.render(<Provider store={store}><App /></Provider>, root);
+ReactDOM.render(<Provider store={store}><GamesList /></Provider>, root);

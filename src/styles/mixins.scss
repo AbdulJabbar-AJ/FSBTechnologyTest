@@ -1,0 +1,7 @@
+@mixin section($bg: none, $botMargin: 0) {
+  background-color: $bg;
+  margin-bottom: $botMargin;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+

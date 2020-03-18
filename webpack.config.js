@@ -35,12 +35,7 @@ module.exports =  {
                 test: /\.s?css$/,
                 use: [
                     'style-loader',
-                    {
-                        loader: 'css-loader',
-                        query: {
-                            modules: true,
-                        }
-                    },
+                    'css-loader',
                     'sass-loader'
                 ]
             },
