@@ -35,7 +35,7 @@ export default function Counter({price = 1, active}) {
         : null
 
     return (
-        <div className='counter'>
+        <div data-testid="counter" className='counter'>
             <div className='count-header'>Quantity</div>
             <button className='increment' onClick={increment}>+</button>
             <button className='decrement' onClick={decrement}>-</button>
@@ -46,4 +46,3 @@ export default function Counter({price = 1, active}) {
         </div>
     )
 }
-
