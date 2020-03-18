@@ -22,3 +22,9 @@ Run the server
         npm run build
 
     *   Files will be output in a `dist` folder in the project root
+
+
+#### Step 4 (Optional)
+To run all unit tests, run the following npm script
+
+        npm run tests
