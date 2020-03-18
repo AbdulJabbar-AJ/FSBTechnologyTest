@@ -7,7 +7,7 @@
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.prod.config.js",
     "server": "nodemon --watch server --watch webpack.config.js --watch ./src/index.html server/server.js",
-    "tests": "jest --verbose --watch"
+    "tests": "jest --verbose"
   },
   "eslintConfig": {
     "extends": "react-app"
